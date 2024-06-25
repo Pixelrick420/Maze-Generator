@@ -13,13 +13,13 @@ body {
     background: #333333;
     padding: 20px;
     border-radius: 6vh;
-    height:50vh;
+    height:60vh;
     width: 80vh;
     border:3vh solid #afabbd;
 }
 
 .question {
-    margin-bottom: 15vh;
+    margin-bottom: 5vh;
     font-family: "Courier Prime", monospace;
     font-weight: 600;
     font-style: normal;
@@ -28,18 +28,19 @@ body {
 
 .options {
 display: flex;
-justify-content: space-between;
+flex-wrap: wrap;
+justify-content: center;
 }
-
 .option {
-    color:#f4f1e9;
-    background-color: #333333;
-    flex: 1;
-    margin: 0 10px;
-    padding: 10px;
-    border:1vh solid #afabbd;
+    flex: 1; 
+    margin: 10px; 
+    padding: 20px;
+    text-align: center; 
+    border: 1vh solid #afabbd;
     border-radius: 4vh;
     transition: box-shadow 0.3s ease;
+    background-color: #333333;
+    color: #f4f1e9;
 }
 
 .option:hover {

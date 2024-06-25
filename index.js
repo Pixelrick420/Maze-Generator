@@ -1,6 +1,6 @@
 function redirectToDFS() {
     window.location.href = 'dfs.html'; 
 }
-function redirectToBFS() {
-    window.location.href = 'bfs.html'; 
+function redirectToworkingonit() {
+    window.location.href = 'workingonit.html'; 
 }
