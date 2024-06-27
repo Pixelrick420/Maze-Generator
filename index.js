@@ -14,6 +14,10 @@ function redirectToBinarytree(){
     window.location.href = 'binarytree.html';
 }
 
+function redirectToSidewinder() {
+    window.location.href = 'sidewinder.html'; 
+}
+
 function redirectToworkingonit() {
     window.location.href = 'workingonit.html'; 
 }
