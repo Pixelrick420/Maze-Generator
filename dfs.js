@@ -6,7 +6,7 @@ var stack = [];
 
 function setup(){
     smooth();
-    frameRate(60);
+    frameRate(70);
     createCanvas(600, 600);
     cols = floor(width / size);
     rows = floor(height / size);

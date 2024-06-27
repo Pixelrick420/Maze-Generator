@@ -2,12 +2,10 @@ var rows, cols;
 var size = 20;
 var grid = [];
 var current;
-var frontier = [];
-var maze = [];
 
 function setup(){
     smooth();
-    frameRate(80);
+    frameRate(140);
     createCanvas(600, 600);
     cols = floor(width / size);
     rows = floor(height / size);
@@ -21,10 +19,9 @@ function setup(){
         grid.push(row);
     }
 
-    current = grid[15][15]; 
+    current = grid[0][0]; 
     current.visited = 1; 
     current.iscurrent = 1;
-    frontier.push(...current.boundaries());
 }
 
 function draw() {
@@ -35,24 +32,36 @@ function draw() {
         }
     }
 
-    if (frontier.length > 0) {
-        maze.push(current);
-        for (var i = frontier.length - 1; i >= 0; i--) {
-            var next = frontier[i][1];
-            if (maze.includes(next)) {
-                frontier.splice(i, 1);
-            }
+    if(current.j < (grid[0].length - 1) && current.i < (grid.length - 1)){
+        if (Math.floor(Math.random() * 2)){
+            current.walls[2] = 0;
+            grid[current.i + 1][current.j].walls[0] = 0;
         }
-
-        var nextwall = frontier.splice(Math.floor(Math.random() * frontier.length), 1)[0];
-        var next = nextwall[1];
-        remwalls(nextwall[0], next);
-        current.iscurrent = 0;
-        next.visited = 1;
-        next.iscurrent = 1;
-        current = next;
-        frontier.push(...current.boundaries());
+        else{
+            current.walls[1] = 0;
+            grid[current.i][current.j + 1].walls[3] = 0;
+        }
     }
+    else if(current.j < (grid[0].length - 1)){
+        current.walls[1] = 0;
+        grid[current.i][current.j + 1].walls[3] = 0;
+    }
+    else{
+        current.walls[2] = 0;
+        grid[current.i + 1][current.j].walls[0] = 0; 
+    }
+
+    if (current.j < (grid[0].length - 1)){
+        var next = grid[current.i][current.j + 1];
+    }
+
+    else{
+        var next = grid[current.i + 1][0];
+    }
+    current.iscurrent = 0;
+    next.visited = 1;
+    next.iscurrent = 1
+    current = next;
 }
 
 function remwalls(cell1, cell2){
@@ -83,23 +92,6 @@ function Cell(i, j){
     this.walls = [1, 1, 1, 1]; // top, right, bottom, left
     this.visited = 0;
     this.iscurrent = 0;
-
-    this.boundaries = function(){
-        var bounds = [];
-        if (this.i > 0 && !grid[this.i - 1][this.j].visited){
-            bounds.push([grid[this.i][this.j], grid[this.i - 1][this.j]]);
-        }
-        if (this.j < cols - 1 && !grid[this.i][this.j + 1].visited){
-            bounds.push([grid[this.i][this.j], grid[this.i][this.j + 1]]);
-        }
-        if (this.i < rows - 1 && !grid[this.i + 1][this.j].visited){
-            bounds.push([grid[this.i][this.j], grid[this.i + 1][this.j]]);
-        }
-        if (this.j > 0 && !grid[this.i][this.j - 1].visited){
-            bounds.push([grid[this.i][this.j], grid[this.i][this.j - 1]]);
-        }
-        return bounds;
-    }
 
     this.show = function(){
         noFill();
