@@ -21,7 +21,7 @@ function setup(){
         grid.push(row);
     }
 
-    current = grid[4][4]; 
+    current = grid[6][6]; 
     current.visited = 1; 
     current.iscurrent = 1;
     frontier.push(...current.boundaries());
