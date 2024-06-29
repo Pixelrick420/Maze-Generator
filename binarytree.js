@@ -48,7 +48,7 @@ function draw() {
         current.walls[1] = 0;
         grid[current.i][current.j + 1].walls[3] = 0;
     }
-    else{
+    else if (current.i < grid.length - 1){
         current.walls[2] = 0;
         grid[current.i + 1][current.j].walls[0] = 0; 
     }
@@ -58,12 +58,23 @@ function draw() {
     }
 
     else{
-        var next = grid[current.i + 1][0];
+        if(current.i + 1 >= grid.length){
+            var next = undefined;
+        }
+        else{
+            var next = grid[current.i + 1][0];
+        }
     }
-    current.iscurrent = 0;
-    next.visited = 1;
-    next.iscurrent = 1
-    current = next;
+    if(next != undefined){
+        current.iscurrent = 0;
+        next.visited = 1;
+        next.iscurrent = 1
+        current = next;
+    }
+    else{
+        current.iscurrent = 0;
+    }
+    
 }
 
 function remwalls(cell1, cell2){

@@ -50,13 +50,18 @@ function draw() {
         }
 
         var nextwall = frontier.splice(Math.floor(Math.random() * frontier.length), 1)[0];
-        var next = nextwall[1];
-        remwalls(nextwall[0], next);
-        current.iscurrent = 0;
-        next.visited = 1;
-        next.iscurrent = 1;
-        current = next;
-        frontier.push(...current.boundaries());
+        if(nextwall != undefined){
+            var next = nextwall[1];
+            remwalls(nextwall[0], next);
+            current.iscurrent = 0;
+            next.visited = 1;
+            next.iscurrent = 1;
+            current = next;
+            frontier.push(...current.boundaries());
+        }
+        else{
+            current.iscurrent = 0;
+        }
     }
 }
 

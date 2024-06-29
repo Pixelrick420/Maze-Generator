@@ -61,12 +61,20 @@ function draw() {
         carve.walls[0] = 0;
         grid[carve.i - 1][carve.j].walls[2] = 0;
         run = [];
-        var next = grid[carve.i + 1][0];
+        if(carve.i + 1 >= grid.length){
+            current.iscurrent = 0;
+            next = undefined;
+        }
+        else{
+            var next = grid[carve.i + 1][0];
+        }
     }
-    current.iscurrent = 0;
-    next.iscurrent = 1;
-    next.visited = 1;
-    current = next; 
+    if(next != undefined){
+        current.iscurrent = 0;
+        next.iscurrent = 1;
+        next.visited = 1;
+        current = next; 
+    } 
 }
 
 function remwalls(cell1, cell2){
