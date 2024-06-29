@@ -11,8 +11,9 @@ const framerate = parseInt(urlParams.get('framerate'));
 function setup(){
     smooth();
     frameRate(framerate);
-    createCanvas(cols*size, rows*size);
-
+    createCanvas(cols*size, rows*size)
+    // canvas = ;
+    // canvas.parent('myCanvasContainer');
     for (var r = 0; r < rows; r++) {
         var row = [];
         for (var c = 0; c < cols; c++) {

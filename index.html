@@ -12,11 +12,11 @@
 </head>
 <body>
   <div class='top'>
-    <button onclick="redirect()" class='generate-button'><h3>Generate</h3></button>
+    <button onclick="generate()" class='generate-button'><h3>Generate</h3></button>
   </div>
   <div class='section'>
     <div class='algorithm'>
-      <div class='question'><h1>Choose Algorithm</h1></div>
+      <div class='question'><h1>Algorithm</h1></div>
       <div class='options'>
         <button onclick="handleAlgorithmClick('dfs')" class='option' data-algorithm="dfs"><h3>DFS</h3></button>
         <button onclick="handleAlgorithmClick('prims')" class='option' data-algorithm="prims"><h3>Prim's</h3></button>
@@ -26,7 +26,7 @@
       </div>
     </div>
     <div class='size'>
-      <div class='question'><h1>Choose Options</h1></div>
+      <div class='question'><h1>Options</h1></div>
       <div class='options'>
         <label for="width">Width:<span id="widthValue">20</span></label>
         <input type="range" id="width" name="width" min="3" max="40" value="20">

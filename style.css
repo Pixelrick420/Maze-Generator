@@ -22,7 +22,7 @@ body {
     margin-top: 15vh;
 }
 
-.algorithm, .size {
+.algorithm, .size{
     text-align: center;
     background:  #6ba1dd;
     padding: 20px; 
@@ -55,24 +55,27 @@ label {
     font-size: 4vh; 
     text-align: left;
     margin-left: 3vh;
+    margin-top:1vh;
+    margin-bottom: 1vh;
 }
 
 input[type="range"] {
-    flex: 2;
+    -webkit-appearance: none;
+    height: 10px;
+    background: #ccc;
+    outline: none;
     margin-left: 10px;
+    border-radius: 3vh;
     appearance: none;
     background-color: #000000;
-    cursor: pointer;
-    border-radius: 5vh; 
+    cursor: pointer; 
     margin-top: 1vh; 
-    border: 1vh solid #787c7e; 
-    transition: background-color 0.3s ease, border 0.3s ease;
+    transition: background-color 0.1s ease;
     margin-bottom: 2vh;
 }
 
 input[type="range"]:hover {
-    border: 1vh solid #f5793a; 
-    background-color: #f4f1e9;
+    background-color: #f5793a;
 }
 
 input[type="range"]:hover::-webkit-slider-thumb {
@@ -80,11 +83,11 @@ input[type="range"]:hover::-webkit-slider-thumb {
 }
 
 input[type="range"]::-webkit-slider-thumb {
+    border-radius: 5px;
     appearance: none;
     width: 4vh; 
     height: 4vh; 
     background-color: #f4f1e9;
-    border-radius: 50%;
     margin-top: -.85vh; 
     margin-bottom: -.85vh; 
     transition: background-color 0.3s ease;   
@@ -115,8 +118,9 @@ input[type="range"]::-moz-range-thumb {
     font-weight: 600;
     font-size: 3vh;
     cursor: pointer;
-    padding-left: 6vh;
-    padding-right: 6vh;
+    width: 25vh;
+    margin-left: 3vh;
+    margin-right: 3vh;
     transition: color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 

@@ -14,7 +14,7 @@ function handleAlgorithmClick(algorithm) {
     }
 }
 
-function redirect() {
+function generate() {
     if (selected === undefined) {
         alert('Please select an algorithm');
     } else {
