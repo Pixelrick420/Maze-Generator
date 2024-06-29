@@ -48,14 +48,16 @@ function draw() {
     }
 
     if (walls.length > 0) {
-        var currentwall = walls.pop(); 
-        var set1 = find(currentwall[0].id);
-        var set2 = find(currentwall[1].id);
-
-        if (set1 !== set2) {
-            remwalls(currentwall[0], currentwall[1]);
-            union(set1, set2);
+        var set1 = 0;
+        var set2 = 0;
+        while(set1 == set2){
+            var currentwall = walls.pop(); 
+            set1 = find(currentwall[0].id);
+            set2 = find(currentwall[1].id);
         }
+        
+        remwalls(currentwall[0], currentwall[1]);
+        union(set1, set2);
 
         currentwall[0].visited = 1;
         currentwall[1].visited = 1;
