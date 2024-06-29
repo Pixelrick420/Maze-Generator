@@ -3,7 +3,7 @@ var run = [];
 var current;
 
 const urlParams = new URLSearchParams(window.location.search);
-const framerate = urlParams.get('framerate');
+const framerate = parseInt(urlParams.get('framerate'));
 const cols = parseInt(urlParams.get('width'));
 const rows = parseInt(urlParams.get('height'));
 var size = Math.min(Math.floor(700 / rows), Math.floor(1400 / cols));
