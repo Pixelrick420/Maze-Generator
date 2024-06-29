@@ -3,10 +3,18 @@ canvas {
 }
 
 body{
-    background-color: #555555;
+    background-color: #424242;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+}
+canvas{
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    border: 1px solid black; 
+
 }

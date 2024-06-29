@@ -1,15 +1,17 @@
-var rows, cols;
-var size = 20;
 var grid = [];
 var run = [];
 var current;
 
-function setup(){
+const urlParams = new URLSearchParams(window.location.search);
+const framerate = urlParams.get('framerate');
+const cols = parseInt(urlParams.get('width'));
+const rows = parseInt(urlParams.get('height'));
+var size = Math.min(Math.floor(700 / rows), Math.floor(1400 / cols));
+
+function setup() {
     smooth();
-    frameRate(160);
-    createCanvas(600, 600);
-    cols = floor(width / size);
-    rows = floor(height / size);
+    frameRate(framerate);
+    createCanvas(cols*size, rows*size);
 
     for (var r = 0; r < rows; r++) {
         var row = [];
@@ -118,12 +120,12 @@ function Cell(i, j){
         }
         if (this.visited) {
             noStroke();
-            fill(100, 15, 155);
+            fill(107,161,221);
             rect(x, y, size, size);
         }
         if (this.iscurrent){
             noStroke();
-            fill(200, 162, 200);
+            fill(245,121,58);
             rect(x, y, size, size);
         }
     }

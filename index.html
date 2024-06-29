@@ -11,16 +11,33 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class='container'>
-    <div class='question'><h1>Choose Algorithm</h1></div>
-    <div class='options'>
-      <button onclick="redirectToDFS()" class='option' id="option1"><h3>DFS</h3></button>
-      <button onclick="redirectToPrims()" class='option' id="option2"><h3>Prim's</h3></button>
-      <button onclick="redirectToKruskals()" class='option' id="option3"><h3>Kruskal's</h3></button>
-      <button onclick="redirectToBinarytree()" class='option' id="option4"><h3>Binary tree</h3></button>
-      <button onclick="redirectToSidewinder()" class='option' id="option5"><h3>Sidewinder</h3></button>
+  <div class='top'>
+    <button onclick="redirect()" class='generate-button'><h3>Generate</h3></button>
+  </div>
+  <div class='section'>
+    <div class='algorithm'>
+      <div class='question'><h1>Choose Algorithm</h1></div>
+      <div class='options'>
+        <button onclick="handleAlgorithmClick('dfs')" class='option' data-algorithm="dfs"><h3>DFS</h3></button>
+        <button onclick="handleAlgorithmClick('prims')" class='option' data-algorithm="prims"><h3>Prim's</h3></button>
+        <button onclick="handleAlgorithmClick('kruskals')" class='option' data-algorithm="kruskals"><h3>Kruskal's</h3></button>
+        <button onclick="handleAlgorithmClick('binarytree')" class='option' data-algorithm="binarytree"><h3>Binary tree</h3></button>
+        <button onclick="handleAlgorithmClick('Sidewinder')" class='option' data-algorithm="sidewinder"><h3>Sidewinder</h3></button>
+      </div>
+    </div>
+    <div class='size'>
+      <div class='question'><h1>Choose Options</h1></div>
+      <div class='options'>
+        <label for="width">Width:<span id="widthValue">20</span></label>
+        <input type="range" id="width" name="width" min="3" max="40" value="20">
+        <label for="height">Height:<span id="heightValue">20</span></label>
+        <input type="range" id="height" name="height" min="3" max="40" value="20">
+        <label for="framerate">Framerate:<span id="framerate">50</span> fps</label>
+        <input type="range" id="frame" name="frame" min="1" max="100" value="50">
+      </div>
     </div>
   </div>
+  
   <Script src='index.js'></Script>
 </body>
 </html>
