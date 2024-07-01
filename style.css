@@ -4,13 +4,14 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #818384;
+    background-color: #968f8f;
     color: #000000;
 }
 
 .algorithm .option.selected {
     background-color: #f5793a; 
     color: #000000; 
+    box-shadow: 8px 8px 0px rgba(255, 255, 255);
 }
 
 .section {
@@ -27,7 +28,7 @@ body {
     background:  #6ba1dd;
     padding: 20px; 
     border-radius: 6vh; 
-    border: 3vh solid  #424242;
+    border: 2.5vh solid  #000000;
     width: 70vh; 
     height: 55vh; 
     display: flex;
@@ -150,7 +151,7 @@ input[type="range"]::-moz-range-thumb {
     margin: 1vh; 
     padding: 1vh; 
     text-align: center; 
-    border: 1vh solid #787c7e; 
+    border: 1vh solid #424242; 
     border-radius: 4vh; 
     transition: box-shadow 0.3s ease, color 0.3s ease, background-color 0.3s ease;
     background-color:  #000000;

@@ -1,19 +1,129 @@
-body {
-    background-color: #424242;
+body, html {
     margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Courier Prime', monospace;
+    background-color: #424242;
 }
 
-#myCanvasContainer{
-    justify-content: center;
-    align-items: center;
+.container {
+    display: flex;
+    height: 100vh;
 }
-canvas {
-    padding:0;
-    display: block;
-    margin: 0;
+
+#CanvasContainer {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 5vh;
+    padding-right: 5vh;
+}
+
+#Solve {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #424242;
+    flex-direction: column;
+    gap: 5vh;
+    padding-right: 5vh;
+}
+
+.solve-button {
+    background-color: #000000;
+    color: #f4f1e9;
+    border: 1vh solid #dcdcdc;
+    border-radius: 4vh;
+    font-family: "Courier Prime", monospace;
+    font-weight: 600;
+    font-size: 3vh;
+    cursor: pointer;
+    width: 25vh;
+    margin-left: 3vh;
+    margin-right: 3vh;
+    transition: color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.solve-button:hover {
+    color: #000000;
+    background-color: #f5793a;
+    box-shadow: 8px 8px 0px #6ba1dd;
+}
+
+.algorithm .option.selected {
+    background-color: #f5793a; 
+    color: #000000; 
+    box-shadow: 8px 8px 0px #000000; 
+}
+
+.section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10vh; 
+}
+
+.algorithm {
+    text-align: center;
+    background: #6ba1dd;
+    padding: 20px; 
+    border-radius: 6vh; 
+    border: 2vh solid #dcdcdc;
+    width: 50vh; 
+    height: 55vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+h1 {
+    margin-bottom: 2vh; 
+}
+
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5vh;
+}
+
+.question {
+    margin-bottom: 1vh; 
+    font-family: "Courier Prime", monospace;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 3.5vh; 
+    margin-bottom: 5vh;
+    color:#000000;
+}
+
+.option {
+    flex: 1;  
+    padding: 0.5vh; 
+    padding-left: 3vh;
+    padding-right: 3vh;
+    text-align: center; 
+    border: 1vh solid #dcdcdc;
+    border-radius: 4vh; 
+    transition: box-shadow 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+    background-color: #000000;
+    color: #f4f1e9;
+    width: 20vh;
+    
+}
+
+.option:hover {
+    color: #000000;
+    background-color: #f5793a;
+    box-shadow: 8px 8px 0px #000000;
+}
+
+button {
+    font-family: "Courier Prime", monospace;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 3vh; 
 }

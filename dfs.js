@@ -1,19 +1,19 @@
 var grid = [];
 var current;
 var stack = [];
+var generated = false;
 
 const urlParams = new URLSearchParams(window.location.search);
 const cols = parseInt(urlParams.get('width'));
 const rows = parseInt(urlParams.get('height'));
-var size = Math.min(Math.floor(700 / rows), Math.floor(1400 / cols));
+var size = Math.min(Math.floor(700 / rows), Math.floor(1000 / cols));
 const framerate = parseInt(urlParams.get('framerate'));
 
 function setup(){
     smooth();
     frameRate(framerate);
-    createCanvas(cols*size, rows*size)
-    // canvas = ;
-    // canvas.parent('myCanvasContainer');
+    canvas = createCanvas(cols*size, rows*size);
+    canvas.parent('CanvasContainer');
     for (var r = 0; r < rows; r++) {
         var row = [];
         for (var c = 0; c < cols; c++) {
@@ -60,6 +60,9 @@ function draw() {
         if (stack.length > 0) {
             current = stack[stack.length - 1];
         }
+    }
+    if(next == undefined && stack.length == 0){
+        generated = true;
     }
 }
 

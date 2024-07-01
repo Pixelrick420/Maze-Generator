@@ -2,18 +2,20 @@ var grid = [];
 var walls = [];
 var parent = [];
 var rank = [];
+var generated = false;
 
 const urlParams = new URLSearchParams(window.location.search);
 const cols = parseInt(urlParams.get('width'));
 const rows = parseInt(urlParams.get('height'));
-var size = Math.min(Math.floor(700 / rows), Math.floor(1400 / cols));
+var size = Math.min(Math.floor(700 / rows), Math.floor(1000 / cols));
 const framerate = parseInt(urlParams.get('framerate'));
 
 
 function setup() {
     smooth();
     frameRate(framerate);
-    createCanvas(cols*size, rows*size);
+    canvas = createCanvas(cols*size, rows*size);
+    canvas.parent('CanvasContainer');
 
     for (var r = 0; r < rows; r++) {
         var row = [];
@@ -52,16 +54,23 @@ function draw() {
         var set2 = 0;
         while(set1 == set2){
             var currentwall = walls.pop(); 
+            if(currentwall == undefined){
+                generated = true;
+                break
+            }
             set1 = find(currentwall[0].id);
             set2 = find(currentwall[1].id);
         }
         
-        remwalls(currentwall[0], currentwall[1]);
-        union(set1, set2);
+        if (! generated){
+            remwalls(currentwall[0], currentwall[1]);
+            union(set1, set2);
 
-        currentwall[0].visited = 1;
-        currentwall[1].visited = 1;
+            currentwall[0].visited = 1;
+            currentwall[1].visited = 1;
+        }   
     }
+
 }
 
 function remwalls(cell1, cell2) {

@@ -11,10 +11,26 @@
 <link rel="stylesheet" href="algs.css">
 </head>
 <body>
-    <!-- <div id="myCanvasContainer">
-        <canvas></canvas>
-    </div> -->
+    <div class="container">
+        <div id="CanvasContainer"></div>
+        <div id='Solve'>
+            <div class='top'>
+                <button onclick="solve()" class='solve-button'><h3>Solve</h3></button>
+            </div>
+            <div class='section'>
+                <div class='algorithm'>
+                    <div class='question'><h1>Algorithm</h1></div>
+                    <div class='options'>
+                        <button onclick="handleAlgorithmClick('bfs')" class='option' data-algorithm="bfs"><h3>BFS</h3></button>
+                        <button onclick="handleAlgorithmClick('astar')" class='option' data-algorithm="astar"><h3>A*</h3></button>
+                        <button onclick="handleAlgorithmClick('def')" class='option' data-algorithm="def"><h3>Dead-End Fill</h3></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="p5.js"></script>
     <script src="dfs.js"></script>
+    <script src="mazesolver.js"></script>
 </body>
 </html>
