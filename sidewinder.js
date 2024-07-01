@@ -110,6 +110,8 @@ function Cell(i, j){
     this.walls = [1, 1, 1, 1]; // top, right, bottom, left
     this.visited = 0;
     this.iscurrent = 0;
+    this.inpath = 0;
+    this.final = 0;
 
     this.show = function(){
         noFill();
@@ -141,5 +143,56 @@ function Cell(i, j){
             fill(245,121,58);
             rect(x, y, size, size);
         }
+        if (this.inpath){
+            noStroke();
+            fill(245,121,58);
+            rect(x, y, size, size);
+        }
+        if (this.final){
+            noStroke();
+            fill (66, 66, 66);
+            rect(x, y, size, size);
+        }
+    }
+}
+function solve(){
+    if(generated){
+        if(clickedButton == undefined){
+            alert('Select an algorithm');
+        }
+        else{
+            const script = document.createElement('script');
+            script.src = clickedButton.getAttribute('data-algorithm') + '.js'; 
+            script.async = true;
+    
+            script.onload = function() {
+                console.log('Script loaded successfully');
+            };
+    
+            script.onerror = function() {
+                console.error('Script load error');
+            };
+    
+            document.body.appendChild(script);
+        }
+        
+    }
+    else{
+        alert("Wait for the maze to be generated")
+    }
+}
+
+
+function handleAlgorithmClick(algorithm) {
+    selected = algorithm.toLowerCase(); 
+
+    const algorithmButtons = document.querySelectorAll('.algorithm .option');
+    algorithmButtons.forEach(button => {
+        button.classList.remove('selected');
+    });
+
+    clickedButton = document.querySelector(`.algorithm .option[data-algorithm="${selected}"]`);
+    if (clickedButton) {
+        clickedButton.classList.add('selected');
     }
 }

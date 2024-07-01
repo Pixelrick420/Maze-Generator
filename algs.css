@@ -20,6 +20,9 @@ body, html {
     padding-left: 5vh;
     padding-right: 5vh;
 }
+canvas{
+    border: 1vh solid #f4f1e9;
+}
 
 #Solve {
     flex: 1;

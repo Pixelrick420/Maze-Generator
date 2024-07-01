@@ -1,7 +1,8 @@
-var grid = [];
+var grid1 = [];
 var walls = [];
 var parent = [];
 var rank = [];
+var grid = [];
 var generated = false;
 
 const urlParams = new URLSearchParams(window.location.search);
@@ -22,7 +23,7 @@ function setup() {
         for (var c = 0; c < cols; c++) {
             let cell = new Cell(r, c);
             row.push(cell);
-            grid.push(cell);
+            grid1.push(cell);
             parent[cell.id] = cell.id;
             rank[cell.id] = 0;
         }
@@ -30,13 +31,13 @@ function setup() {
 
     for (var r = 0; r < rows; r++) {
         for (var c = 0; c < cols - 1; c++) {
-            walls.push([grid[r * cols + c], grid[r * cols + c + 1]]);
+            walls.push([grid1[r * cols + c], grid1[r * cols + c + 1]]);
         }
     }
 
     for (var c = 0; c < cols; c++) {
         for (var r = 0; r < rows - 1; r++) {
-            walls.push([grid[r * cols + c], grid[(r + 1) * cols + c]]);
+            walls.push([grid1[r * cols + c], grid1[(r + 1) * cols + c]]);
         }
     }
 
@@ -45,8 +46,8 @@ function setup() {
 
 function draw() {
     background(51);
-    for (var r = 0; r < grid.length; r++) {
-        grid[r].show();
+    for (var r = 0; r < grid1.length; r++) {
+        grid1[r].show();
     }
 
     if (walls.length > 0) {
@@ -133,6 +134,8 @@ function Cell(i, j) {
     this.id = i * cols + j;
     this.walls = [1, 1, 1, 1]; // top, right, bottom, left
     this.visited = 0;
+    this.inpath = 0;
+    this.final = 0;
 
     this.show = function() {
         noFill();
@@ -159,5 +162,60 @@ function Cell(i, j) {
             fill(107,161,221);
             rect(x, y, size, size);
         }
+        if (this.inpath){
+            noStroke();
+            fill(245,121,58);
+            rect(x, y, size, size);
+        }
+        if (this.final){
+            noStroke();
+            fill (66, 66, 66);
+            rect(x, y, size, size);
+        }
+    }
+}
+
+function solve(){
+    if(generated){
+        for (var i = 0; i < grid1.length; i += cols) {
+            grid.push(grid1.slice(i, i + cols));
+        }
+        if(clickedButton == undefined){
+            alert('Select an algorithm');
+        }
+        else{
+            const script = document.createElement('script');
+            script.src = clickedButton.getAttribute('data-algorithm') + '.js'; 
+            script.async = true;
+    
+            script.onload = function() {
+                console.log('Script loaded successfully');
+            };
+    
+            script.onerror = function() {
+                console.error('Script load error');
+            };
+    
+            document.body.appendChild(script);
+        }
+        
+    }
+    else{
+        alert("Wait for the maze to be generated")
+    }
+}
+
+
+function handleAlgorithmClick(algorithm) {
+    selected = algorithm.toLowerCase(); 
+
+    const algorithmButtons = document.querySelectorAll('.algorithm .option');
+    algorithmButtons.forEach(button => {
+        button.classList.remove('selected');
+    });
+
+    clickedButton = document.querySelector(`.algorithm .option[data-algorithm="${selected}"]`);
+    if (clickedButton) {
+        clickedButton.classList.add('selected');
     }
 }
