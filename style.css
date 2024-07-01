@@ -119,7 +119,7 @@ input[type="range"]::-moz-range-thumb {
     font-weight: 600;
     font-size: 3vh;
     cursor: pointer;
-    width: 25vh;
+    width: 40vh;
     margin-left: 3vh;
     margin-right: 3vh;
     transition: color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
