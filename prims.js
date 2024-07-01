@@ -3,6 +3,7 @@ var current;
 var frontier = [];
 var maze = [];
 var generated = false;
+var clickedButton = undefined;
 
 const urlParams = new URLSearchParams(window.location.search);
 const cols = parseInt(urlParams.get('width'));

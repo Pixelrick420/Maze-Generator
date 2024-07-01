@@ -2,7 +2,7 @@ var grid = [];
 var run = [];
 var current;
 var generated = false;
-
+var clickedButton = undefined;
 const urlParams = new URLSearchParams(window.location.search);
 const framerate = parseInt(urlParams.get('framerate'));
 const cols = parseInt(urlParams.get('width'));

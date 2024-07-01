@@ -4,7 +4,7 @@ var parent = [];
 var rank = [];
 var grid = [];
 var generated = false;
-var clickedButton = undefined
+var clickedButton = undefined;
 
 const urlParams = new URLSearchParams(window.location.search);
 const cols = parseInt(urlParams.get('width'));

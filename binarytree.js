@@ -1,7 +1,7 @@
 var grid = [];
 var current;
 var generated = false;
-
+var clickedButton = undefined;
 const urlParams = new URLSearchParams(window.location.search);
 const cols = parseInt(urlParams.get('width'));
 const rows = parseInt(urlParams.get('height'));
