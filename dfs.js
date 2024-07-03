@@ -109,8 +109,8 @@ function Cell(i, j){
         noFill();
         var x = this.j * size;
         var y = this.i * size;
-        stroke(255);
-        strokeWeight(2); 
+        stroke("#f4f1e9;");
+        strokeWeight(3); 
         strokeCap(ROUND); 
 
         if (this.walls[0]) {
