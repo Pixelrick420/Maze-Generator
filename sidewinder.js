@@ -24,6 +24,12 @@ function setup() {
                 cell.walls[3] = 0;
                 cell.visited = 1;
             }
+            if(c == cols - 1){
+                cell.walls[1] = 1;
+            }
+            if(c == 0){
+                cell.walls[3] = 1;
+            }
             row.push(cell);
         }
         grid.push(row);
