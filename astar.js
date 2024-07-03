@@ -1,1 +1,1 @@
-alert("only bfs works for now");
+alert("can't implement(help)(i have watched 84 tutorials)");
