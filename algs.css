@@ -115,7 +115,7 @@ h1 {
     background-color: #000000;
     color: #f4f1e9;
     width: 20vh;
-    
+    cursor:pointer;
 }
 
 .option:hover {
