@@ -12,5 +12,5 @@ The solving algorithms included are:
  * Dead-end Fill
  * A* 
 
-I have made seperate .js files for each algorithm so that they can be analized and run individually. This however does result in a lot of redundant code.
+I have made seperate .js files for each algorithm so that they can be analyzed and run individually. This however does result in a lot of redundant code.
  
