@@ -1,4 +1,4 @@
-This website serves to provide a visualization of different maze generation and maze solving algorithms.<br/>
+This website serves to provide visualizations of different maze generation and maze solving algorithms.<br/>
 I got most of the ideas implimented here from [this](https://www.youtube.com/watch?v=HyK_Q5rrcr4) yt tutorial series from the coding train.<br/>
 The generation algorithms included are:
   * Depth First Search
