@@ -117,7 +117,7 @@ input[type="range"]::-moz-range-thumb {
 .generate-button {
     background-color: #000000;
     color: #f4f1e9;
-    border: 1vh solid #f4f1e9;
+    border: 1vh solid #000000;
     border-radius: 4vh;
     font-family: "Courier Prime", monospace;
     font-weight: 600;
