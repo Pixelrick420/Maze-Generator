@@ -133,7 +133,7 @@ function Cell(i, j){
         }
         if (this.visited) {
             noStroke();
-            fill(107,161,221);
+            fill('#188be9');
             rect(x, y, size, size);
         }
         if (this.iscurrent){
