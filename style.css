@@ -9,10 +9,12 @@ body {
 }
 
 .algorithm .option.selected {
-    background-color: #f5793a; 
-    color: #000000; 
-    box-shadow: 8px 8px 0px rgba(255, 255, 255);
+    color: #000000;
+    background-color: aliceblue;
+    box-shadow: 8px 8px 0px rgba(0, 0, 0);
 }
+
+
 
 .section {
     display: flex;
@@ -80,7 +82,7 @@ input[type="range"] {
 }
 
 input[type="range"]:hover {
-    background-color: #188be9 ;
+    background-color: #ffffff ;
 }
 
 input[type="range"]:hover::-webkit-slider-thumb {
@@ -157,7 +159,7 @@ input[type="range"]::-moz-range-thumb {
     text-align: center; 
     border: 1vh solid #0b0b0b; 
     border-radius: 4vh; 
-    transition: box-shadow 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+    transition:all 0.3s ease;
     background-color:  #000000;
     color:  #f4f1e9;
     margin-bottom: 1vh;
@@ -166,8 +168,8 @@ input[type="range"]::-moz-range-thumb {
 
 .option:hover {
     color: #000000;
-    background-color: #f5793a;
-    box-shadow: 8px 8px 0px rgba(255, 255, 255);
+    background-color: aliceblue;
+    box-shadow: 8px 8px 0px rgba(0, 0, 0);
 }
 
 button {

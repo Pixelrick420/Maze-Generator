@@ -38,7 +38,7 @@ canvas{
 .solve-button {
     background-color: #000000;
     color: #f4f1e9;
-    border: 1vh solid #dcdcdc;
+    border: 1vh solid #000000;
     border-radius: 4vh;
     font-family: "Courier Prime", monospace;
     font-weight: 600;
@@ -52,14 +52,14 @@ canvas{
 
 .solve-button:hover {
     color: #000000;
-    background-color: #f5793a;
-    box-shadow: 8px 8px 0px #188be9 ;
+    background-color: aliceblue;
+    box-shadow: 8px 8px 0px rgba(0, 0, 0);
 }
 
 .algorithm .option.selected {
-    background-color: #f5793a; 
-    color: #000000; 
-    box-shadow: 8px 8px 0px #000000; 
+    color: #000000;
+    background-color: aliceblue;
+    box-shadow: 8px 8px 0px rgba(0, 0, 0);
 }
 
 .section {
@@ -109,7 +109,7 @@ h1 {
     padding-left: 3vh;
     padding-right: 3vh;
     text-align: center; 
-    border: 1vh solid #dcdcdc;
+    border: 1vh solid rgb(0, 0, 0);
     border-radius: 4vh; 
     transition: box-shadow 0.3s ease, color 0.3s ease, background-color 0.3s ease;
     background-color: #000000;
@@ -120,8 +120,8 @@ h1 {
 
 .option:hover {
     color: #000000;
-    background-color: #f5793a;
-    box-shadow: 8px 8px 0px #000000;
+    background-color: aliceblue;
+    box-shadow: 8px 8px 0px rgba(0, 0, 0);
 }
 
 button {
